@@ -1,15 +1,22 @@
-import { AuthForm } from '../tasks';
+import { AuthForm, ObjectEquality } from '../tasks';
 import { Navigate } from 'react-router-dom';
 
 interface IRoute {
   path: string;
   element: React.ReactNode;
+  name?: string;
 }
 
 export const routes: IRoute[] = [
   {
     path: '/authform',
     element: <AuthForm />,
+    name: 'Task 1 - Authorization form',
+  },
+  {
+    path: '/objectqequality',
+    element: <ObjectEquality />,
+    name: 'Task 3 - Object equality',
   },
   {
     path: '/',
