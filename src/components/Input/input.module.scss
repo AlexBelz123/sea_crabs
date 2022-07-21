@@ -1,0 +1,44 @@
+label {
+  text-transform: capitalize;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+input {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 3px;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  background-color: rgba(white, 0.5);
+  display: block;
+
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 2px;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(black, 0.1);
+    border-bottom: 3px solid var(--color-primary);
+  }
+
+  &:focus:invalid {
+    border-bottom: 3px solid var(--color-action);
+  }
+}
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: transparent;
+}
+
+.errorMsg {
+  color: var(--color-action);
+}

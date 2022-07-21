@@ -1,0 +1,14 @@
+.form {
+  // change to class later
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2rem;
+  border-radius: 3px;
+  background-color: var(--color-light-1);
+
+  & > *:last-child {
+    margin-top: 2rem;
+  }
+}
