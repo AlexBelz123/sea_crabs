@@ -42,6 +42,7 @@ function reducer(state: IFilters, action: TFiltersAction) {
   }
 }
 
+// we can extract filters logic, but to keep it simple I didn't do it
 const ObjectEquality = () => {
   const [currentMethod, setCurrentMethod] = React.useState('deepEqual');
   const [{ fields, depth }, dispatch] = React.useReducer(reducer, initialState);

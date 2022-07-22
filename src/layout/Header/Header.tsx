@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.scss';
 import { Link, useLocation } from 'react-router-dom';
-import { routes } from '../routes';
+import { routes, IRoute } from '../routes';
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -9,7 +9,7 @@ const Header = () => {
     routes.find((route) => route.path === pathname)
   );
 
-  const handleClick = (route: any) => {
+  const handleClick = (route: IRoute) => {
     setActiveRoute(route);
   };
 

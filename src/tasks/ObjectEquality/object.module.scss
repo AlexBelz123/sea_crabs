@@ -45,15 +45,6 @@
   }
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-.top {
-  margin-top: 2rem;
-}
-
 .filtersWrapper {
   display: flex;
   align-items: center;
@@ -77,4 +68,13 @@
   & button:not(:last-of-type) {
     margin-right: 1rem;
   }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.top {
+  margin-top: 2rem;
 }

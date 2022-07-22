@@ -1,7 +1,7 @@
 import { AuthForm, ObjectEquality } from '../tasks';
 import { Navigate } from 'react-router-dom';
 
-interface IRoute {
+export interface IRoute {
   path: string;
   element: React.ReactNode;
   name?: string;
