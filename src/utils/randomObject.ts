@@ -57,5 +57,5 @@ export function generateRandomObject(count: number, depth = DEFAULT_DEPTH) {
 
 export function generateEqualObjects(count: number, depth = DEFAULT_DEPTH) {
   const temp = generateRandomObject(count, depth);
-  return [temp, temp] as const;
+  return [temp, temp];
 }

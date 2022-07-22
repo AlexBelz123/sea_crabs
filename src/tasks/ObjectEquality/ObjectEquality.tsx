@@ -14,7 +14,6 @@ const ObjectEquality = () => {
   );
 
   const compareOnClick = () => {
-    // @ts-ignore fix
     const result = compareMethods[currentMethod](objects[0], objects[1]);
     const msg = result ? 'Objects are equal.' : 'Objects are NOT equal';
     alert(msg);
@@ -24,7 +23,6 @@ const ObjectEquality = () => {
     let currentObjects = [...objects];
     currentObjects[idx] = generateRandomObject(4, 2);
 
-    // @ts-ignore fix
     setObjects(currentObjects);
   };
 

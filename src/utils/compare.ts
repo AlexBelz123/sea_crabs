@@ -4,7 +4,11 @@ export function isObject(object: Object) {
 }
 
 // shallow comparance
-function shallowCompare(object1: any, object2: any) {
+interface IObject {
+  [key: string]: any;
+}
+
+function shallowCompare(object1: IObject, object2: IObject) {
   for (const key in object1) {
     if (object1[key] !== object2[key]) return false;
   }
@@ -12,7 +16,7 @@ function shallowCompare(object1: any, object2: any) {
 }
 
 // deep comparance
-function deepEqual(object1: any, object2: any) {
+function deepEqual(object1: IObject, object2: IObject) {
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
   if (keys1.length !== keys2.length) {
@@ -33,11 +37,15 @@ function deepEqual(object1: any, object2: any) {
 }
 
 // compare with JSON
-function deepEqualWithJSON(object1: Object, object2: Object) {
+function deepEqualWithJSON(object1: IObject, object2: IObject) {
   return JSON.stringify(object1) === JSON.stringify(object2);
 }
 
-export const compareMethods = {
+interface IMethods {
+  [key: string]: (obj1: IObject, obj2: IObject) => boolean;
+}
+
+export const compareMethods: IMethods = {
   shallowCompare,
   deepEqual,
   deepEqualWithJSON,
