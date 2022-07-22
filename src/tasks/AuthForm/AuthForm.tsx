@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input, Button } from '../../components';
 import { isEmail } from '../../utils/validation';
+import { sleep } from '../../utils/sleep';
 import styles from './authform.module.scss';
 
 const MIN = 8;
@@ -11,8 +12,10 @@ interface IInputErrors {
 }
 
 function AuthForm() {
+  // we can extract logic, but it's simple example, so I left it as it is
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [isSubmitting, setSubmitting] = React.useState(false);
   const [errors, setErrors] = React.useState<IInputErrors>({
     email: null,
     password: null,
@@ -46,8 +49,11 @@ function AuthForm() {
     setPassword(value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitting(true);
+    await sleep(1500); // simulates real request
+    setSubmitting(false);
     setEmail('');
     setPassword('');
     alert('Form successfully submitted');
@@ -72,8 +78,8 @@ function AuthForm() {
         errorMsg={errors.password}
         required
       />
-      <Button type="submit" disabled={canSubmit}>
-        Submit
+      <Button type="submit" disabled={canSubmit || isSubmitting}>
+        {isSubmitting ? 'Submitting...' : 'Submit'}
       </Button>
     </form>
   );
