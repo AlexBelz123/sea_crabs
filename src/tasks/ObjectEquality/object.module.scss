@@ -23,9 +23,18 @@
   justify-items: center;
 }
 
-.placeCenter {
+.compareBtn {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+
+  display: flex;
+  align-items: center;
+
+  & svg {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
 }
 
 .row {

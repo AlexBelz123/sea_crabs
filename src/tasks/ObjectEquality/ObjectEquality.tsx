@@ -5,6 +5,7 @@ import {
   generateRandomObject,
   generateEqualObjects,
 } from '../../utils/randomObject';
+import { CompareIcon } from '../../assets/icons';
 import styles from './object.module.scss';
 
 const ObjectEquality = () => {
@@ -52,8 +53,8 @@ const ObjectEquality = () => {
           <Button onClick={() => updateObjectByIndex(1)}>
             Generate the new one
           </Button>
-          <Button className={styles.placeCenter} onClick={compareOnClick}>
-            Compare
+          <Button className={styles.compareBtn} onClick={compareOnClick}>
+            Compare <CompareIcon />
           </Button>
         </div>
         <div className={styles.row}>
