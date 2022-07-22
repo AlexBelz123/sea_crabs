@@ -1,0 +1,39 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  @include alignCenter;
+  margin: 4rem;
+}
+
+.jsonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jsonWrapper {
+  padding: 2rem;
+  margin: 4rem;
+  text-align: center;
+  background-color: var(--color-light-1);
+  &:not(:last-child) {
+    margin-right: 4rem;
+  }
+}
+
+.panel {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.placeCenter {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.row {
+  display: flex;
+}

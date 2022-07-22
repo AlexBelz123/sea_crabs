@@ -16,7 +16,7 @@ export const routes: IRoute[] = [
   {
     path: '/objectqequality',
     element: <ObjectEquality />,
-    name: 'Task 3 - Object equality',
+    name: 'Task 2 - Object equality',
   },
   {
     path: '/',
