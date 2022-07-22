@@ -35,6 +35,8 @@ const DEFAULT_DEPTH = 1;
 export function generateRandomObject(count: number, depth = DEFAULT_DEPTH) {
   const temp: any = {}; // fix
 
+  console.log('hello');
+
   const helper = () => {
     for (let i = 0; i < count; i++) {
       const propertyIndex = Math.floor(Math.random() * letters.length);
@@ -46,7 +48,7 @@ export function generateRandomObject(count: number, depth = DEFAULT_DEPTH) {
   if (count > 0 && depth > 1) {
     for (let i = 0; i < count; i++) {
       const propertyIndex = Math.floor(Math.random() * letters.length);
-      temp[propertyIndex] = generateRandomObject(count - 1, depth - 1);
+      temp[propertyIndex] = generateRandomObject(count - i, depth - 1);
     }
     return temp;
   }
