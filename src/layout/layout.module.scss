@@ -1,0 +1,6 @@
+@import '../styles/mixins.scss';
+
+.container {
+  @include alignCenter;
+  margin: 4rem;
+}

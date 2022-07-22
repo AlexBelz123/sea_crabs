@@ -35,7 +35,7 @@ const ObjectEquality = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       <Select
         label="Choose equality method"
         options={['deepEqual', 'shallowCompare', 'deepEqualWithJSON']}
@@ -63,7 +63,7 @@ const ObjectEquality = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

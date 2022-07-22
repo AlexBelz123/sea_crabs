@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './header.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { routes } from '../routes';
 
 const Header = () => {
-  const [activeRoute, setActiveRoute] = React.useState(routes[0]);
+  const { pathname } = useLocation();
+  const [activeRoute, setActiveRoute] = React.useState(() =>
+    routes.find((route) => route.path === pathname)
+  );
+
+  console.log(activeRoute);
 
   const handleClick = (route: any) => {
     setActiveRoute(route);
@@ -19,13 +24,13 @@ const Header = () => {
             to={route.path}
             className={
               styles.dot +
-              `${route.path === activeRoute.path ? ' ' + styles.active : ' '}`
+              `${route.path === activeRoute?.path ? ' ' + styles.active : ' '}`
             }
             onClick={() => handleClick(route)}
           />
         ))}
       </ul>
-      <p>{activeRoute.name}</p>
+      <p>{activeRoute?.name}</p>
     </div>
   );
 };
