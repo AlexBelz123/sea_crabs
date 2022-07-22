@@ -9,8 +9,6 @@ const Header = () => {
     routes.find((route) => route.path === pathname)
   );
 
-  console.log(activeRoute);
-
   const handleClick = (route: any) => {
     setActiveRoute(route);
   };

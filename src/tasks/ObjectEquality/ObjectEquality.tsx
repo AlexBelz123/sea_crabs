@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Button } from '../../components';
+import { Select, Button, Tooltip } from '../../components';
 import { compareMethods } from '../../utils/compare';
 import {
   generateRandomObject,
@@ -36,11 +36,13 @@ const ObjectEquality = () => {
 
   return (
     <>
-      <Select
-        label="Choose equality method"
-        options={['deepEqual', 'shallowCompare', 'deepEqualWithJSON']}
-        handleSelect={handleSelect}
-      />
+      <Tooltip title="Choose method to comparence">
+        <Select
+          label="Choose equality method"
+          options={['deepEqual', 'shallowCompare', 'deepEqualWithJSON']}
+          handleSelect={handleSelect}
+        />
+      </Tooltip>
       <div className={styles.jsonContainer}>
         <div className={styles.panel}>
           <Button onClick={() => updateObjectByIndex(0)}>
