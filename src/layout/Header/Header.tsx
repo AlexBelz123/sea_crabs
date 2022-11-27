@@ -6,7 +6,7 @@ import { routes, IRoute } from '../routes';
 const Header = () => {
   const { pathname } = useLocation();
   const [activeRoute, setActiveRoute] = React.useState(() =>
-    routes.find((route) => route.path === pathname)
+    routes.find((route) => (pathname === '/' ? route : route.path === pathname))
   );
 
   const handleClick = (route: IRoute) => {

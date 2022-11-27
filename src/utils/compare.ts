@@ -15,6 +15,7 @@ function shallowCompare(object1: IObject, object2: IObject) {
   return true;
 }
 
+// TODO 6
 // deep comparance
 function deepEqual(object1: IObject, object2: IObject) {
   const keys1 = Object.keys(object1);

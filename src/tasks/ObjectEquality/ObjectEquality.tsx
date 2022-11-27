@@ -27,6 +27,7 @@ const initialState: IFilters = {
 
 type TFiltersAction = { type: EFilterActions };
 
+// TODO 6
 function reducer(state: IFilters, action: TFiltersAction) {
   switch (action.type) {
     case EFilterActions.INCREMENT_FIELDS:
@@ -42,6 +43,7 @@ function reducer(state: IFilters, action: TFiltersAction) {
   }
 }
 
+// TODO 2
 // we can extract filters logic, but to keep it simple I didn't do it
 const ObjectEquality = () => {
   const [currentMethod, setCurrentMethod] = React.useState('deepEqual');

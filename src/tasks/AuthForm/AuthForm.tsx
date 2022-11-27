@@ -11,6 +11,7 @@ interface IInputErrors {
   password: null | string;
 }
 
+// TODO 1
 function AuthForm() {
   // we can extract logic, but it's simple example, so I left it as it is
   const [email, setEmail] = React.useState('');
@@ -20,6 +21,8 @@ function AuthForm() {
     email: null,
     password: null,
   });
+
+  console.log(email, password);
 
   const canSubmit = Object.values(errors).findIndex((el) => el !== null) !== -1;
 
@@ -54,9 +57,9 @@ function AuthForm() {
     setSubmitting(true);
     await sleep(1500); // simulates real request
     setSubmitting(false);
+    alert('Form successfully submitted');
     setEmail('');
     setPassword('');
-    alert('Form successfully submitted');
   };
 
   return (

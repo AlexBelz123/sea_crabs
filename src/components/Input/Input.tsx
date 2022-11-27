@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import styles from './input.module.scss';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -6,6 +6,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorMsg?: string | null;
 }
 
+// TODO 3
+// TODO 9
 const Input: React.FC<InputProps> = ({
   type,
   label,
@@ -14,13 +16,15 @@ const Input: React.FC<InputProps> = ({
   errorMsg,
   ...props
 }) => {
+  const id = useId();
   return (
     <div className={styles.inputWrapper}>
-      <label htmlFor={'current-' + label}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
-        id={'current-' + label}
+        id={id}
         name={type}
         type={type}
+        value={value}
         onChange={onChange}
         {...props}
       />
